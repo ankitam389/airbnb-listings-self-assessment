@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SF Stay Planner - AirBNB Listings</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary rounded mt-3">
+          <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#">SF Stay Planner</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#planner">Trip planner</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#listingsSection">Listings</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <section class="row align-items-end g-4 my-4">
+        <div class="col-lg-7">
+          <h1 class="display-5 fw-bold">Plan a San Francisco stay that fits your budget</h1>
+          <p class="lead text-body-secondary">
+            Enter how many nights you're staying, how many guests are coming and
+            your total budget. Every listing below shows the real cost of your trip.
+          </p>
+        </div>
+
+        <div class="col-lg-5">
+          <form id="planner" class="card text-bg-dark p-3">
+            <div class="row g-2">
+              <div class="col-4">
+                <label for="nights" class="form-label">Nights</label>
+                <input id="nights" type="number" class="form-control" min="1" value="3" />
+              </div>
+              <div class="col-4">
+                <label for="guests" class="form-label">Guests</label>
+                <input id="guests" type="number" class="form-control" min="1" value="2" />
+              </div>
+              <div class="col-4">
+                <label for="budget" class="form-label">Budget ($)</label>
+                <input id="budget" type="number" class="form-control" min="0" step="50" value="900" />
+              </div>
+            </div>
+            <p id="plannerSummary" class="mt-3 mb-0 small"></p>
+          </form>
+        </div>
+      </section>
+
+      <hr />
+
+      <section id="listingsSection">
+        <h2>Listings</h2>
+
+        <div class="row g-3 align-items-end py-3 mb-2">
+          <div class="col-md-4">
+            <label for="search" class="form-label">Search name, neighborhood or amenity</label>
+            <input id="search" type="search" class="form-control" placeholder="e.g. Mission, parking" />
+          </div>
+          <div class="col-md-3">
+            <label for="sort" class="form-label">Sort by</label>
+            <select id="sort" class="form-select">
+              <option value="original">Original order</option>
+              <option value="priceAsc">Price: low to high</option>
+              <option value="priceDesc">Price: high to low</option>
+              <option value="rating">Rating: highest first</option>
+            </select>
+          </div>
+          <div class="col-md-3">
+            <div class="form-check mb-2">
+              <input id="onlyFits" type="checkbox" class="form-check-input" />
+              <label for="onlyFits" class="form-check-label">Only stays that fit my trip</label>
+            </div>
+          </div>
+          <div class="col-md-2 d-grid">
+            <button id="surprise" type="button" class="btn btn-danger">Pick one for me</button>
+          </div>
+        </div>
+
+        <p id="count" class="text-body-secondary"></p>
+
+        <div id="listings" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <p>Loading listings...</p>
+        </div>
+      </section>
+
+      <footer class="text-center text-body-secondary small my-5">
+        Data: San Francisco listings from
+        <a href="http://insideairbnb.com/" target="_blank">Inside Airbnb</a>.
+      </footer>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

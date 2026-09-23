@@ -1,0 +1,19 @@
+body {
+  background-color: #eef1f4;
+}
+
+#listings .listing .listing-thumb {
+  height: 220px;
+  object-fit: cover;
+}
+
+#listings .listing .host-photo {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+}
+
+#listings .listing .description {
+  max-height: 120px;
+  overflow-y: auto;
+}
